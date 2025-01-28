@@ -8,7 +8,7 @@
 typedef char* buffer;
 
 struct Global_Buffer {
-    struct File_Buffer** p_fbuffer;
+    struct File_Buffer* p_fbuffer;
     u_int total_buffers;
     u_int active_buffer;
 };
@@ -22,9 +22,7 @@ struct File_Buffer {
     u_int written_rows;
 };
 
-bool Init_Global_File_Buffer(u_int file_nums, char** file_names);
+bool init_global_file_buffer(u_int file_nums, char** file_names);
 bool write_to_buffer(const char c);
-
-static bool Init_File_Buffer(struct File_Buffer*** f, const u_int buf_nums, char** file_names);
 
 #endif

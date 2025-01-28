@@ -1,5 +1,6 @@
 #include "include/keypresses.h"
 #include "include/global.h"
+#include <termios.h>
 
 enum MODE GLOBAL_MODE;
 
@@ -22,6 +23,8 @@ void process_normal_mode_keypress(char c) {
         case I:
             GLOBAL_MODE = INSERT;
             break;
+        case CTRL('q'):
+            exit(0);
     }
 }
 

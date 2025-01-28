@@ -35,11 +35,12 @@ int main(int argc, char** argv) {
     clear_screen();
 
 
-    if(!Init_Global_File_Buffer(argc, argv)) {
+    if(!init_global_file_buffer(argc, argv)) {
         printf("Failed to Initialize the Global file buffer");
         return 1;
     }
 
+    CHECK_FOR_NULL(p_global_buffer);
     CHECK_FOR_NULL(p_global_buffer->p_fbuffer);
 
     char c;
