@@ -18,7 +18,6 @@ static void process_normal_mode_keypress(char c);
 static void process_insert_mode_keypress(char c);
 static void process_search_mode_keypress(char c);
 
-bool initialize();
 void process_keypresses(const char c);
 
 #endif

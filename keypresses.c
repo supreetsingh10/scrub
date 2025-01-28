@@ -2,13 +2,6 @@
 #include "include/global.h"
 #include <termios.h>
 
-enum MODE GLOBAL_MODE;
-
-bool initialize() {
-    GLOBAL_MODE = NORMAL;
-    return true;
-}
-
 void process_insert_mode_keypress(char c) {
     switch (c) {
         case ESC:

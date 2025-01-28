@@ -17,7 +17,7 @@ bool enable_raw_mode() {
 }
 
 static void clear_screen() {
-    write(STDIN_FILENO, clear_screen, strlen(CLEAR_SCREEN));
+    write(STDIN_FILENO, CLEAR_SCREEN, strlen(CLEAR_SCREEN));
 }
 
 bool get_term_window_size(struct winsize* w) {
@@ -26,14 +26,10 @@ bool get_term_window_size(struct winsize* w) {
 
 
 int main(int argc, char** argv) {
-    if(enable_raw_mode() != 0) {
+    if(enable_raw_mode() != 0)
         printf("Failed to enter the raw mode");
-    }
-
-    struct winsize* w;
 
     clear_screen();
-
 
     if(!init_global_file_buffer(argc, argv)) {
         printf("Failed to Initialize the Global file buffer");
@@ -48,7 +44,6 @@ int main(int argc, char** argv) {
         read(STDIN_FILENO, &c, sizeof c);
         process_keypresses(c);
     }
-
 
     return 0;
 }
