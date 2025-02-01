@@ -50,7 +50,6 @@ bool write_to_buffer(const char c) {
 
     // testing something here
     if(write(STDOUT_FILENO, f->p_buffer, sizeof(f->p_buffer)) == -1) {
-        perror("FUCKED HERE BIG TIME");
         exit(1);
     }
 
