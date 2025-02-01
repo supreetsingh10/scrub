@@ -20,4 +20,3 @@ global.o: global.c
 clean: 
 	rm scrub
 
-
