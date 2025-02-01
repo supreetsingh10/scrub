@@ -1,12 +1,16 @@
 #include "include/keypresses.h"
 #include "include/global.h"
+#include "include/buffer.h"
 #include <termios.h>
 
+// I can add a function pointer that will render the updates
 void process_insert_mode_keypress(char c) {
     switch (c) {
         case ESC:
-        GLOBAL_MODE = NORMAL;
-        break;
+            GLOBAL_MODE = NORMAL;
+            break;
+        default:
+            write_to_buffer(c);
     }
 }
 

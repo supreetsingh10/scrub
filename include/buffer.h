@@ -8,7 +8,8 @@
 typedef char* buffer;
 
 struct Global_Buffer {
-    struct File_Buffer* p_fbuffer;
+    // Array of file_buffers
+    struct File_Buffer* p_file_buffer;
     u_int total_buffers;
     u_int active_buffer;
 };

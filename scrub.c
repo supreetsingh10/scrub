@@ -37,12 +37,13 @@ int main(int argc, char** argv) {
     }
 
     CHECK_FOR_NULL(p_global_buffer);
-    CHECK_FOR_NULL(p_global_buffer->p_fbuffer);
+    CHECK_FOR_NULL(p_global_buffer->p_file_buffer);
 
     char c;
     while (true) {
-        read(STDIN_FILENO, &c, sizeof c);
-        process_keypresses(c);
+        if(read(STDIN_FILENO, &c, sizeof c) > 0) {
+            process_keypresses(c);
+        }
     }
 
     return 0;
