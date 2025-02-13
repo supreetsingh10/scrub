@@ -10,7 +10,7 @@ void process_insert_mode_keypress(char c) {
             GLOBAL_MODE = NORMAL;
             break;
         default:
-            write_to_buffer(c);
+            write_to_file_buffer(c);
     }
 }
 
